@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+.calculator {
+  width: 320px;
+  margin: 50px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f7; /* Light gray background */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.display {
+  background-color: #e0e0e5; /* Slightly darker gray for display */
+  color: #333; /* Dark text */
+  font-size: 3.5em; /* Larger font size */
+  text-align: right;
+  padding: 25px 20px;
+  font-weight: 300; /* Lighter font weight */
+  min-height: 1.5em; /* Ensure minimum height */
+  overflow-wrap: break-word; /* Wrap long numbers */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1px; /* Thin lines between buttons */
+  background-color: #d1d1d6; /* Grid line color */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.key {
+  background-color: #f9f9f9; /* Very light gray for keys */
+  border: none;
+  padding: 20px;
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  outline: none; /* Remove default outline */
+}
+
+.key:active {
+  background-color: #e5e5ea; /* Slightly darker on press */
+}
+
+.key.function {
+  background-color: #e5e5ea; /* Light gray for function keys */
+  color: #555; /* Darker gray text */
+}
+
+.key.function:active {
+  background-color: #dcdce1;
+}
+
+.key.operator {
+  background-color: #ff9f0a; /* Orange for operators */
   color: white;
+  font-size: 1.8em; /* Slightly larger operator symbols */
 }
 
-.App-link {
-  color: #61dafb;
+.key.operator:active {
+  background-color: #f59500; /* Darker orange on press */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.key.zero {
+  grid-column: span 2; /* Make zero button wider */
+  background-color: #f9f9f9;
+}
+
+.key.zero:active {
+  background-color: #e5e5ea;
 }
